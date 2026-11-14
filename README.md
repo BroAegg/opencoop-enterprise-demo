@@ -180,13 +180,19 @@ Deployable instantly to Vercel:
 https://opencoop-enterprise-demo.vercel.app
 ```
 
-### 🔑 Demo Role Switcher
-The sandbox UI features a one-click **Role Switcher** in the top navigation bar:
-| Role | Capabilities | Primary View |
+### 🔑 Enterprise Demo Modules & Routes
+The sandbox features the full 1:1 macOS Sequoia & Apple VisionOS dual-workspace design system:
+| Modul Enterprise | Kapabilitas Utama | URL Route Sandbox |
 | :--- | :--- | :--- |
-| **Admin** | Full access to General Ledger, Member Savings, Journal Postings, and SHU RAT. | `/ledger`, `/shu` |
-| **Kasir (Cashier)** | Fast POS checkout, offline simulator toggle, thermal receipt generation. | `/pos` |
-| **Pengawas (Auditor)** | Read-only view of Audit Trails, Balance Sheet, and Reconciliation Logs. | `/ledger` |
+| **Executive Dashboard** | 4-KPI Metric Strip, Recharts financial telemetry, asset donut, & real-time unit activities | `/admin/dashboard` (atau `/`) |
+| **POS Kasir (Offline-First)** | Sub-millisecond IndexedDB catalog search, quick cash tenders, and thermal receipt print | `/kasir/pos` (atau `/pos`) |
+| **Riwayat Transaksi POS** | Audit trail kasir, supervisor authentication, refund/void modal, & thermal re-print | `/kasir/riwayat` |
+| **Manajemen Shift Kasir** | Buka/tutup shift kasir (F8), rekonsiliasi kas laci (F6), dan ringkasan omset harian | `/kasir/shift` |
+| **General Ledger (Jurnal)** | Double-entry journal posting with balanced runtime debit = credit enforcement | `/admin/jurnal` (atau `/ledger`) |
+| **Chart of Accounts (COA)** | Hierarchical SAK-ETAP standard ledger accounts (Aset, Liabilitas, Ekuitas, Pendapatan, Beban) | `/admin/coa` |
+| **Kasir Simpanan** | Setoran tunai, penarikan, dan pelunasan rapel simpanan wajib kolektif | `/admin/simpanan` (atau `/simpan-pinjam`) |
+| **Pembiayaan & Pinjaman** | Pengajuan akad murabahah, simulator amortisasi, dan jadwal potong gaji | `/admin/pembiayaan` (atau `/admin/loans`) |
+| **RAT & SHU Dividen** | Kalkulator bagi hasil UU 25/1992 (Jasa Modal & Usaha) dan generator buku RAT | `/admin/rat` (atau `/shu`) |
 
 ---
 

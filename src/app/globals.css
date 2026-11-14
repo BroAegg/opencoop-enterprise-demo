@@ -3,16 +3,110 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 248, 250, 252;
-  --background-end-rgb: 255, 255, 255;
+  --color-background: #FAFAFB;
+  --color-surface: #F4F5F7;
+  --color-border: #E5E7EB;
+  --color-neutral: #FFFFFF;
+  --color-primary: #1F6376;
+  --color-text-primary: #1F6376;
+  --color-text-secondary: #4B5563;
+  --color-accent: #F39E20;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "New York", "Charter", "Georgia", "Cambria", "Times New Roman", Times, serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #f8fafc;
+  background-color: #FAFAFB;
+  color: #0f172a;
+  font-family: var(--font-sans);
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .font-kpi {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .font-headline {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .font-tabular {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Apple VisionOS Materials */
+  .material-ultra-thin {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .material-thin {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .material-regular {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .material-thick {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .material-liquid-glass {
+    background-color: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    border-left: 1px solid rgba(255, 255, 255, 0.65);
+    border-right: 1px solid rgba(255, 255, 255, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 
+      0 16px 36px -8px rgba(15, 23, 42, 0.12),
+      0 4px 12px -2px rgba(15, 23, 42, 0.06),
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1px 0 rgba(15, 23, 42, 0.04),
+      inset 0 0 16px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .shadow-ambient {
+    box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.35);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.6);
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+  }
 }
 
 /* ESC/POS Thermal Receipt Simulator */

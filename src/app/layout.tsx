@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'NusaCoop ERP & Offline POS Sandbox | OpenCoop Enterprise',
+  title: 'Manasuka Coop (Enterprise Demo) | Automated ERP & Offline POS',
   description: 'Enterprise Cooperative ERP & Offline-First POS Engine with General Ledger and SHU RAT Simulation',
 };
 
@@ -14,21 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="antialiased min-h-screen flex flex-col bg-slate-50 text-slate-900">
-        <Navbar />
-        <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
-          {children}
-        </main>
-        <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 py-6 text-xs text-center">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div>
-              &copy; {new Date().getFullYear()} NusaCoop Enterprise OS &bull; Built with Next.js, IndexedDB & Tailwind CSS
-            </div>
-            <div className="text-slate-500">
-              Sanitized Open Source Architecture Showcase by Aegner Billik
-            </div>
-          </div>
-        </footer>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      </head>
+      <body className="antialiased min-h-screen bg-[#F4F5F7] text-slate-900 font-sans selection:bg-[#1F6376]/20 selection:text-[#1F6376]">
+        {children}
       </body>
     </html>
   );
